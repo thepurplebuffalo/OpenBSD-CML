@@ -1,0 +1,8 @@
+id: OpenBSD-75-p00-minimal
+node_definition_id: OpenBSD
+description: 'OpenBSD 7.5 unpatched, minimal install'
+label: OpenBSD 7.5p00 Minimal
+disk_image: OpenBSD75p00.qcow2
+read_only: false
+disk_subfolder: OpenBSD-75-p00-minimal
+schema_version: 0.0.1
