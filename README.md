@@ -116,11 +116,3 @@ Copy all of the VMDK files from your image to someplace where you can run the
 
 If you receive an error you may be specifying the wrong base VMDK file.  Look
 for the smallest VMDK file and use it.
-
-# CML Node Definition
-
-
-
-# CML Image Definition
-
-
