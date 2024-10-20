@@ -1,9 +1,10 @@
-# This is a sample image definition for an OpenBSD image.
-id: OpenBSD-75-p00-minimal
+id: OpenBSD-76-P001
 node_definition_id: OpenBSD
-description: 'OpenBSD 7.5 unpatched, minimal install'
-label: OpenBSD 7.5p00 Minimal
-disk_image: OpenBSD75p00.qcow2
+description: |-
+  A base OpenBSD 7.6 instance with Patch 1 applied.
+  Includes: mtr, wget, gnuwatch, nmap, wireguard-tools, git, cloud-init
+label: OpenBSD 7.6 Patch 1
+disk_image: OpenBSD76p1.qcow2
 read_only: false
-disk_subfolder: OpenBSD-75-p00-minimal
+disk_subfolder: OpenBSD-76-P001
 schema_version: 0.0.1
