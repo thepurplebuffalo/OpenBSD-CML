@@ -1,9 +1,6 @@
-# This is an export from CML 2.7.0 for a working OpenBSD Node Definition.
-# This file can be imported into CML:
-#    Tools -> Node and Image Definitions -> Node Definitions -> Import
 id: OpenBSD
 general:
-  description: OpenBSD Firewall
+  description: OpenBSD Firewall / Router / Server / Host
   nature: firewall
   read_only: false
 device:
@@ -32,7 +29,7 @@ sim:
     libvirt_domain_driver: kvm
     driver: server
     disk_driver: sata
-    ram: 512
+    ram: 1024
     cpus: 1
     nic_driver: e1000
     cpu_limit: 100
@@ -56,5 +53,26 @@ inherited:
     cpu_limit: true
 configuration:
   generator:
-    driver: null
+    driver: server
+  provisioning:
+    volume_name: cidata
+    media_type: iso
+    files:
+      - name: meta-data
+        editable: true
+        content: |-
+          instance-id: openbsd
+          local-hostname: openbsd
+      - name: user-data
+        editable: true
+        content: |-
+          #cloud-config
+          # Docs: https://cloudinit.readthedocs.io/en/latest/explanation/about-cloud-config.html
+      - name: network-config
+        editable: true
+        content: |-
+          #cloud-config
+          # Docs: https://cloudinit.readthedocs.io/en/latest/reference/network-config-format-v1.html#network-config-v1
+      - name: vendor-data
+        editable: true
 schema_version: 0.0.1
